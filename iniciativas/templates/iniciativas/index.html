@@ -1,0 +1,21 @@
+{% extends "../squeleton.html" %}
+
+{% load bootstrap3 %}{% bootstrap_css %} 
+{% bootstrap_javascript%}{% bootstrap_messages %}
+
+{% block content %}
+    {% if lastest_issues_list %} 
+    {% for i in lastest_issues_list %}
+        <div class="w3-container w3-hover-shadow w3-center" style="padding:10px;">
+            <h2><a href="/iniciativas/{{ i.id }}/">{{ i.name }}</a></h2>
+            <div class="w3-card-4" style="width:100%">
+                <img src="{{ i.image.image.url }}" alt="{{ i.image.title }}" style="width:100%">
+                <div class="w3-container w3-center description">
+                        <br/>{% bootstrap_label i.description %}
+                </div>
+            </div>
+        </div>
+    {% endfor %} 
+    {% else %} 
+    {% bootstrap_label "Nanai" %} {% endif %}
+{% endblock %}

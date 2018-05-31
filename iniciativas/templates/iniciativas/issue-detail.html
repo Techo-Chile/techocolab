@@ -1,0 +1,23 @@
+{% load static %} {# Load the tag library #} {% load bootstrap3 %} {# Load CSS and JavaScript #} {% bootstrap_css %} {% bootstrap_javascript %} {# Display django.contrib.messages as Bootstrap alerts #} {% bootstrap_messages %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'iniciativas/style.css' %}" />
+
+<div id="main-content">
+    {% if lastest_issues_list %}
+        {% for i in lastest_issues_list %}
+        <div class="issue-area">
+            <div class="left-sided">
+                <img src="{{ i.image.image.url }}" />
+            </div>
+            <div class="right-sided">
+                <h1>
+                    <a href="/iniciativas/{{ i.id }}/">{{ i.name }}</a>
+                </h1>
+                <br/>{% bootstrap_label i.description %}
+            </div>
+
+        {% endfor %}
+    {% else %} 
+        {% bootstrap_label "Nanai" %} 
+    {% endif %}
+</div>

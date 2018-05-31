@@ -1,0 +1,47 @@
+body, a, h1, h2, h3{
+    background: #FFF;
+    font-family: 'Oxygen', sans-serif;
+}
+
+#main-content {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, 0%);
+    width: 800px;
+    height: auto;
+}
+
+.description{
+    font-size: 11px;
+}
+
+#left-container{
+    position: relative;
+    float: left;
+    width: 150px;
+}
+
+#left-container #logo{
+    width: 150px;
+    height: 150px;
+}
+
+#left-container #desc{
+    text-align: justify;
+    font-size: 12px;
+    line-height: 9px;
+}
+
+#right-container{
+    position: relative;
+    float: left;
+    width: 650px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
